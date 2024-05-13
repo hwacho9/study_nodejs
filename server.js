@@ -1,10 +1,14 @@
+// use express library to create a server
 const express = require('express');
 const app = express();
 
-app.listen(8000, () => {
-    console.log('Server is running on port: 8000');
+// PORT　
+app.listen(8080, () => {
+    console.log('http://localhost:8080 Server is running on port: 8000');
 })
 
+// send index.html file
+// __dirname is the directory name of the current module
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.sendFile(__dirname + '/index.html');
 });
